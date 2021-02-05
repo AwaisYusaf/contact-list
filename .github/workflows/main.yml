@@ -33,10 +33,10 @@ jobs:
         run: npm install yarn
       
       - name: Install surge
-        run: npm install surge
+        run: npm install -g surge
       
       - name: Build App
         run: yarn build
       
       - name: Deployment
-        run: surge ./build http://contact-list-by-awais.surge.sh/ --token &{{secrets.TOKEN}}
+        run: surge ./build http://contact-list-by-awais.surge.sh/ --token ${{secrets.TOKEN}}
